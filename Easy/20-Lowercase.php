@@ -8,10 +8,6 @@
 $input = fopen($argv[1], 'r');
 
 while (!feof($input)) {
-    $trimmed = strtolower(trim(fgets($input)));
-
-
-    echo $trimmed . "\n";
+    echo strtolower(trim(fgets($input))) . PHP_EOL;
 }
 fclose($input);
-?>
