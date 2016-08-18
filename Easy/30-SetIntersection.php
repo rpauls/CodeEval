@@ -8,8 +8,7 @@
 $input = fopen($argv[1], 'r');
 
 while (!feof($input)) {
-    $trimmed= trim(fgets($input));
-    $exploded = explode(';', $trimmed);
+    $exploded = explode(';', trim(fgets($input)) );
     $listA = explode(',', $exploded[0]);
     $listB = explode(',', $exploded[1]);
     $arr = array();
@@ -25,8 +24,5 @@ while (!feof($input)) {
 
     }
     echo implode(',', $arr). "\n";
-
 }
 fclose($input);
-
-?>
