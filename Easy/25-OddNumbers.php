@@ -5,11 +5,7 @@
  *  Odd Numbers
  */
 for ($i = 0;  $i <= 99; $i++) {
-
-    if($i % 2 == 1) {
-        echo $i."\n";
+    if ($i % 2 == 1) {
+        echo $i . PHP_EOL;
     }
-
 }
-
-?>
