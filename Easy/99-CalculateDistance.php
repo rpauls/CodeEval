@@ -6,10 +6,8 @@
  */
 
 $input = fopen($argv[1], 'r');
-// $trimmed = '(47, 43) (-25, -11)';
 while (!feof($input)) {
-    $trimmed= trim(fgets($input));
-    $exploded = explode(') (', $trimmed);
+    $exploded = explode(') (', trim(fgets($input)));
     $exploded[0] = str_replace('(', '', $exploded[0]);
     $exploded[1] = str_replace(')', '', $exploded[1]);
 
@@ -18,7 +16,7 @@ while (!feof($input)) {
 
     $o = calcDistance($pos1, $pos2);
 
-    echo $o . "\n";
+    echo $o . PHP_EOL;
 }
 fclose($input);
 
@@ -38,9 +36,6 @@ function calcDistance(array $A, array $B)
     // $b2 = pow($B[1] - $A[1], 2);
     //
     // $c = sqrt($a2 + $b2);
-    $c = sqrt(pow($B[0] - $A[0], 2) + pow($B[1] - $A[1], 2));
 
-    return $c;
+    return sqrt(pow($B[0] - $A[0], 2) + pow($B[1] - $A[1], 2));
 }
-
-?>
