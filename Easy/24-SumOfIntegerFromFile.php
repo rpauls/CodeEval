@@ -6,13 +6,9 @@
  */
 
 $input = fopen($argv[1], 'r');
-
+$r = 0;
 while (!feof($input)) {
-    $trimmed = trim(fgets($input));
-
-    echo fib($trimmed) . "\n";
+    $r += trim(fgets($input));
 }
+echo $r . PHP_EOL;
 fclose($input);
-
-
-?>
