@@ -8,11 +8,8 @@
 $input = fopen($argv[1], 'r');
 
 while (!feof($input)) {
-    $trimmed= trim(fgets($input));
-    $exploded = explode(',', $trimmed);
-    echo implode(',', array_unique($exploded, SORT_NUMERIC))."\n";
-
+    echo implode(',', array_unique( explode(',', trim(fgets($input)) ), SORT_NUMERIC))."\n";
 }
 fclose($input);
 
-?>
+
