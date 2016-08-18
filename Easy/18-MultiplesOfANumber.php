@@ -2,26 +2,20 @@
 /*
  *  2016-08-11
  *  CodeEval Challenge - Easy
- *  Sum of Primes
+ *  Multiples Of A Number
  */
 
- $input = fopen($argv[1], 'r');
-// $input_trimmed = '13,8';
+$input = fopen($argv[1], 'r');
 
- while (!feof($input)) {
-     $input_trimmed= trim(fgets($input));
-     $input_exploded = explode(',', $input_trimmed);
-     echo $input_exploded[1] * test_multiple($input_exploded[0], $input_exploded[1]) . "\n";
-
- }
- fclose($input);
-
- function test_multiple($x, $n) {
-  $result = 0;
-  for ($i = 2; $n * $i < $x; $i++) {
-    $result = $n * $i;
-  }
-  return $i;
+while (!feof($input)) {
+    $expl = explode(',', trim(fgets($input)));
+    echo $expl[1] * test_multiple($expl[0], $expl[1]) . PHP_EOL;
 }
+fclose($input);
 
- ?>
+function test_multiple($x, $n) {
+    for ($i = 2; $n * $i < $x; $i++) {
+        $result = $n * $i;
+    }
+    return $i;
+}
