@@ -8,22 +8,18 @@
 $input = fopen($argv[1], 'r');
 
 while (!feof($input)) {
-    $input_trimmed= trim(fgets($input));
-    $input_exploded = explode(' ', $input_trimmed);
-    $output = '';
-
-    for ($i = 1; $i < $input_exploded[count($input_exploded)-1]+1; $i++) {
-        $output .= FizzBuzzSwitch($i, $input_exploded[0], $input_exploded[1]) . ' ';
+    $expl = explode(' ', trim(fgets($input)));
+    $c = count($expl);
+    for ($i = 1; $i < $expl[$c-1]+1; $i++) {
+        echo FizzBuzzIf($i, $expl[0], $expl[1]) . ' ';
     }
-
-    echo $output . "\t\n";
+    echo PHP_EOL;
 }
 fclose($input);
 
-// Else-If Variant
-function FizzBuzzIf($num, $x, $y)
+// Switch-Case Variant
+function FizzBuzzSwitch($num, $x, $y)
 {
-
     switch ($num) {
         case (($num % $x == 0) && ($num % $y == 0)):
             return 'FB';
@@ -39,8 +35,8 @@ function FizzBuzzIf($num, $x, $y)
         break;
     }
 }
-// Switch-Case Variant
-function FizzBuzzSwitch($num, $x, $y) {
+// If-Else Variant
+function FizzBuzzIf($num, $x, $y) {
     if ($num % $x == 0 && $num % $y == 0) {
         return 'FB';
     } elseif ($num % $x == 0) {
@@ -51,5 +47,3 @@ function FizzBuzzSwitch($num, $x, $y) {
         return $num;
     }
 }
-
-?>
