@@ -6,12 +6,7 @@
  */
 
 $input = fopen($argv[1], 'r');
-$trimmed = 0;
 while (!feof($input)) {
-    $trimmed+= trim(fgets($input));
-
+    echo array_sum( str_split( trim(fgets($input)) ) ) . PHP_EOL;
 }
-echo $trimmed . "\n";
 fclose($input);
-
-?>
