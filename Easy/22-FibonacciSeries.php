@@ -1,0 +1,35 @@
+<?php
+/*
+ *  2016-08-12
+ *  CodeEval Challenge - Easy
+ *  Fibonacci Series
+ */
+
+ /*
+  * Formula
+  * f_n = f_n-1 + f_n-2 für n > 2
+  */
+
+
+$input = fopen($argv[1], 'r');
+
+while (!feof($input)) {
+    $trimmed = trim(fgets($input));
+
+    echo fib($trimmed) . "\n";
+}
+fclose($input);
+
+function fib($n) {
+    $n1 = $n - 1;
+    $n2 = $n - 2;
+    if ($n >= 2) {
+      return fib($n1) + fib($n2);
+    } elseif ($n == 1) {
+      return 1;
+    } else {
+      return 0;
+    }
+}
+
+?>
