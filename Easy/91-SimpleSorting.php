@@ -6,16 +6,10 @@
  */
 
 $input = fopen($argv[1], 'r');
-// $trimmed = '70.920 -38.797 14.354 99.323 90.374 7.581';
 while (!feof($input)) {
-    $trimmed= trim(fgets($input));
-    $exploded = explode(' ', $trimmed);
+    $exploded = explode(' ', trim(fgets($input)) );
     sort($exploded);
 
-    echo implode(' ', $exploded) ."\n";
-
+    echo implode(' ', $exploded) . PHP_EOL;
 }
 fclose($input);
-
-
- ?>
