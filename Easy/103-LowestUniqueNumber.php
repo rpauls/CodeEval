@@ -6,10 +6,8 @@
  */
 
 $input = fopen($argv[1], 'r');
-// $trimmed = '3 3 9 1 6 5 8 1 5 3';
 while (!feof($input)) {
-    $trimmed= trim(fgets($input));
-    $num = explode(' ', $trimmed);
+    $num = explode(' ', trim(fgets($input)) );
 
     $occurence  = array_count_values($num);
     $filtered = array_filter($occurence, function($n) {
@@ -25,8 +23,5 @@ while (!feof($input)) {
         $out = $out[array_shift($unique)] + 1;
         echo $out . PHP_EOL;
     }
-
 }
 fclose($input);
-
-?>
