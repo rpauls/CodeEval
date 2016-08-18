@@ -8,9 +8,6 @@
 $input = fopen($argv[1], 'r');
 
 while (!feof($input)) {
-
-    echo hexdec(trim(fgets($input))) . "\n";
+    echo hexdec(trim(fgets($input))) . PHP_EOL;
 }
 fclose($input);
-
-?>
