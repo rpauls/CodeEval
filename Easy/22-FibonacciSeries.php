@@ -5,18 +5,10 @@
  *  Fibonacci Series
  */
 
- /*
-  * Formula
-  * f_n = f_n-1 + f_n-2 für n > 2
-  */
-
-
 $input = fopen($argv[1], 'r');
 
 while (!feof($input)) {
-    $trimmed = trim(fgets($input));
-
-    echo fib($trimmed) . "\n";
+    echo fib(trim(fgets($input))) . PHP_EOL;
 }
 fclose($input);
 
@@ -31,5 +23,3 @@ function fib($n) {
       return 0;
     }
 }
-
-?>
