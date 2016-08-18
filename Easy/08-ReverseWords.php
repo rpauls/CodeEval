@@ -8,14 +8,7 @@
 $input = fopen($argv[1], 'r');
 
 while (!feof($input)) {
-    $input_trimmed= trim(fgets($input));
-    $input_exploded = explode(' ', $input_trimmed);
-    $output = '';
-
-    $output = array_reverse($input_exploded);
-    $output = implode(' ', $output);
-
-    echo $output . "\n";
+    echo implode(' ', array_reverse( explode(' ', trim(fgets($input))) ) ) . PHP_EOL;
 }
 fclose($input);
-?>
+
