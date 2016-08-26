@@ -1,2 +1,2 @@
-# CodeEval-PHP
-Solutions of the CodeEval challaneges written in PHP. Done as a learning excercise.
+# CodeEval
+Solutions of the CodeEval challenges mostly written in PHP and some JS. Done as a learning exercise.

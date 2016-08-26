@@ -35,5 +35,3 @@ while (!feof($input)) {
     echo $o . PHP_EOL;
 }
 fclose($input);
-
-
