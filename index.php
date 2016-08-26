@@ -53,7 +53,7 @@
     if ($handle = opendir('.')) {
 
         while (false !== ($entry = readdir($handle))) {
-            if ($entry != '.' && $entry != '..' && $entry != 'index.php' && $entry != '.editorconfig') {
+            if ($entry != '.' && $entry != '..' && $entry != 'index.php' && $entry != '.editorconfig' && $entry != '.git') {
                 echo '<a href="'.$entry.'">'.$entry.'</a>';
             }
         }
