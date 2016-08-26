@@ -8,7 +8,7 @@
  $input = fopen($argv[1], 'r');
  // $trimmed = 'world 10000';
  while (!feof($input)) {
-     $trimmed= trim(fgets($input));
+    $trimmed= trim(fgets($input));
     $expl = explode(' ', $trimmed);
     $out = '';
 

@@ -23,6 +23,6 @@ while (!feof($input)) {
         }
 
     }
-    echo implode(',', $arr). "\n";
+    echo implode(',', $arr). PHP_EOL;
 }
 fclose($input);

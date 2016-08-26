@@ -1,7 +1,7 @@
 <?php
 /*
  *  2016-08-12
- *  CodeEval Challenge - Medium
+ *  CodeEval Challenge - Moderate
  *  Number of Ones
  */
 $input = fopen($argv[1], 'r');
@@ -20,10 +20,10 @@ while (!feof($input)) {
         // }
     }
 
-    echo $score."\n";
+    echo $score.PHP_EOL;
 
 }
 fclose($input);
 
 
-?>
+

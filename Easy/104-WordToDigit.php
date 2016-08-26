@@ -8,10 +8,9 @@
 $input = fopen($argv[1], 'r');
 // $trimmed = 'zero;two;five;seven;eight;four';
 while (!feof($input)) {
-    $trimmed= trim(fgets($input));
-    $exploded = explode(';', $trimmed);
+    $exploded = ;
 
-    echo wordToDigits($exploded) . "\n";
+    echo wordToDigits($exploded) . PHP_EOL;
 }
 fclose($input);
 
@@ -56,5 +55,3 @@ function wordToDigits(array $words)
 
     return $digits;
 }
-
-?>

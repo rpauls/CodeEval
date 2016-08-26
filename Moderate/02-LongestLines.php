@@ -1,10 +1,10 @@
 <?php
 /*
  *  2016-08-08
- *  CodeEval Challenge - Medium
+ *  CodeEval Challenge - Moderate
  *  Longest Lines
  */
- 
+
 $input = fopen($argv[1], 'r');
 $input_list = array();
 
@@ -17,7 +17,7 @@ while (!feof($input)) {
 
 usort($input_list, 'SortByLength');
 foreach($input_list as $item) {
-    echo $item . "\n";
+    echo $item . PHP_EOL;
 }
 fclose($input);
 
@@ -27,4 +27,4 @@ function SortByLength($a, $b)
      return strlen($b) - strlen($a);
 }
 
-?>
+

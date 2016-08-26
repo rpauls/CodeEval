@@ -23,11 +23,11 @@ while (!feof($input)) {
     }
 
     if(empty($o_num)) {
-        echo implode(',', $o_word) . "\n";
+        echo implode(',', $o_word) . PHP_EOL;
     } elseif(empty($o_word)) {
-        echo implode(',', $o_num) . "\n";
+        echo implode(',', $o_num) . PHP_EOL;
     } else {
-        echo implode(',', $o_word) . '|' . implode(',', $o_num) . "\n";
+        echo implode(',', $o_word) . '|' . implode(',', $o_num) . PHP_EOL;
     }
 
 
@@ -35,4 +35,4 @@ while (!feof($input)) {
 }
 fclose($input);
 
- ?>
+ 

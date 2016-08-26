@@ -22,10 +22,10 @@ while (!feof($input)) {
 
     }
 
-    echo implode(' ', $o) . "\n";
+    echo implode(' ', $o) . PHP_EOL;
 
 }
 fclose($input);
 
 
- ?>
+ 

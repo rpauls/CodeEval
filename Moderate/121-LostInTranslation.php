@@ -47,8 +47,8 @@ while (!feof($input)) {
         $o .= $translationMatrix[$text[$i]];
     }
 
-    echo $o . "\n";
+    echo $o . PHP_EOL;
 }
 fclose($input);
 
-?>
+

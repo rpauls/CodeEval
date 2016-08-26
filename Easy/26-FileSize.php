@@ -6,5 +6,3 @@
  */
 
 echo filesize($argv[1]);
-
-?>

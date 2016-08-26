@@ -5,6 +5,11 @@
  *  Fibonacci Series
  */
 
+ /*
+  * Formula
+  * f_n = f_n-1 + f_n-2 für n > 2
+  */
+
 $input = fopen($argv[1], 'r');
 
 while (!feof($input)) {

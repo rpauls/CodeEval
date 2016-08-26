@@ -11,4 +11,3 @@ while (!feof($input)) {
     echo implode(' ', array_reverse( explode(' ', trim(fgets($input))) ) ) . PHP_EOL;
 }
 fclose($input);
-

@@ -1,7 +1,7 @@
 <?php
 /*
  *  2016-08-12
- *  CodeEval Challenge - Medium
+ *  CodeEval Challenge - Moderate
  *  Remove Characters
  */
 $input = fopen($argv[1], 'r');
@@ -12,7 +12,7 @@ while (!feof($input)) {
     $trimmed = trim(fgets($input));
     $exploded = explode(',', $trimmed);
 
-    echo removeChars($exploded[0], $exploded[1])."\n";
+    echo removeChars($exploded[0], $exploded[1]).PHP_EOL;
 
 }
 fclose($input);
@@ -32,4 +32,4 @@ function removeChars($sentence, $chars)
 
 }
 
-?>
+
