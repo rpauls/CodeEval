@@ -2,6 +2,7 @@
  *  2016-08-26
  *  CodeEval Challenge - Moderate
  *  Guess The Number
+ *  https://www.codeeval.com/open_challenges/170/
  */
 
 var fs  = require("fs");
