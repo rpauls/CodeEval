@@ -1,17 +1,18 @@
 <?php
 /*
- *  2016-08-25
+ *  2016-08-29
  *  CodeEval Challenge - Moderate
  *  Overlapping Rectangles
  */
 
+// DEBUG
+// $input = fopen('./input.txt', 'r');
+// PROD
 $input = fopen($argv[1], 'r');
-// $input = '-3,3,-1,1,-2,4,2,2';
 while (!feof($input)) {
     $trim = trim(fgets($input));
     if($trim === '') {#
-        echo 'False';
-        continue;
+        break;
     }
     $expl = explode(',', $trim);
     $rects = array();
@@ -41,10 +42,12 @@ function constructRect(array $upperLeft, array $lowerRight)
 function checkOverlapping(array $rectA, array $rectB)
 {
     $ret = 'False';
-    if ($rectA['pos'][0] + $rectA['dim'][0] >= $rectB['pos'][0] &&
-    $rectA['pos'][0] < $rectB['pos'][0] + $rectB['dim'][0] &&
-    $rectA['pos'][1] + $rectA['dim'][1] >= $rectB['pos'][1] &&
-    $rectA['pos'][1] < $rectB['pos'][1] + $rectB['dim'][1]) {
+    if (
+        $rectA['pos'][0] + $rectA['dim'][0] >= $rectB['pos'][0] &&
+        $rectA['pos'][0] < $rectB['pos'][0] + $rectB['dim'][0] &&
+        $rectA['pos'][1] + $rectA['dim'][1] >= $rectB['pos'][1] &&
+        $rectA['pos'][1] < $rectB['pos'][1] + $rectB['dim'][1]
+    ) {
         $ret = 'True';
     }
 
