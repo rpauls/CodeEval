@@ -6,9 +6,9 @@
  */
 
 // DEBUG
-// $input = fopen('./input.txt', 'r');
+$input = fopen('./input.txt', 'r');
 // PROD
-$input = fopen($argv[1], 'r');
+// $input = fopen($argv[1], 'r');
 while (!feof($input)) {
     $trim = trim(fgets($input));
     if($trim === '') {#
