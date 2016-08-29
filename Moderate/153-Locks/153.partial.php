@@ -6,19 +6,18 @@
  */
 
  // DEBUG
- // $input = fopen('./input.txt', 'r');
+ $input = fopen('./input.txt', 'r');
  // PROD
-$input = fopen($argv[1], 'r');
+// $input = fopen($argv[1], 'r');
 while (!feof($input)) {
     $expl = explode(' ', trim(fgets($input)));
-    // $expl = explode(' ', trim($input));
 
     $expl[0] = intval($expl[0]);
     $expl[1] = intval($expl[1]);
 
     $x = $expl[0];
 
-    if ($expl[1] == 1) {
+    if ($expl[1] === 1) {
         $x -= 1;
     } else {
         $y = 0;
@@ -27,10 +26,12 @@ while (!feof($input)) {
             $locked = false;
 
             if ($i % 2 === 0 && $i % 3 === 0) {
-
+                echo '2nd & 3rd <br/>';
             } elseif ($i % 2 === 0) {
+                echo '2nd <br/>';
                 $locked = true;
             }  elseif ($i % 3 === 0) {
+                echo '3rd <br/>';
                 if (($expl[1]-1) % 2 !== 0) {
                     $locked = true;
                 }
@@ -46,7 +47,6 @@ while (!feof($input)) {
         }
         $x -= $y;
     }
-
 
     echo $x . PHP_EOL;
 }
