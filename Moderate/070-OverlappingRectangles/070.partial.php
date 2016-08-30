@@ -1,6 +1,6 @@
 <?php
 /*
- *  2016-08-29
+ *  2016-08-25
  *  CodeEval Challenge - Moderate
  *  Overlapping Rectangles
  */
@@ -10,22 +10,30 @@ $input = fopen('./input.txt', 'r');
 // PROD
 // $input = fopen($argv[1], 'r');
 while (!feof($input)) {
-    $trim = trim(fgets($input));
-    if($trim === '') {#
-        break;
-    }
-    $expl = explode(',', $trim);
+    $expl = explode(',', trim(fgets($input)));
     $rects = array();
 
-    $c = count($expl);
-    for($i = 0; $i < $c; $i += 2) {
-        $rects[] = array($expl[$i], $expl[$i+1]);
+    $next = false;
+    foreach ($expl as $val) {
+        if (is_bool($val) || empty($val) || $val == '') {
+            echo 'False' . PHP_EOL;
+            $next= true;
+        }
     }
 
-    $rectA = constructRect($rects[0], $rects[1]);
-    $rectB = constructRect($rects[2], $rects[3]);
+    // var_dump($expl);
 
-    echo checkOverlapping($rectA, $rectB) . PHP_EOL;
+    if (!$next) {
+        $c = count($expl);
+        for($i = 0; $i < $c; $i += 2) {
+            $rects[] = array($expl[$i], $expl[$i+1]);
+        }
+
+        $rectA = constructRect($rects[0], $rects[1]);
+        $rectB = constructRect($rects[2], $rects[3]);
+
+        echo checkOverlapping($rectA, $rectB) . PHP_EOL;
+    }
 }
 fclose($input);
 
@@ -42,12 +50,10 @@ function constructRect(array $upperLeft, array $lowerRight)
 function checkOverlapping(array $rectA, array $rectB)
 {
     $ret = 'False';
-    if (
-        $rectA['pos'][0] + $rectA['dim'][0] >= $rectB['pos'][0] &&
-        $rectA['pos'][0] < $rectB['pos'][0] + $rectB['dim'][0] &&
-        $rectA['pos'][1] + $rectA['dim'][1] >= $rectB['pos'][1] &&
-        $rectA['pos'][1] < $rectB['pos'][1] + $rectB['dim'][1]
-    ) {
+    if ($rectA['pos'][0] + $rectA['dim'][0] >= $rectB['pos'][0] &&
+    $rectA['pos'][0] < $rectB['pos'][0] + $rectB['dim'][0] &&
+    $rectA['pos'][1] + $rectA['dim'][1] >= $rectB['pos'][1] &&
+    $rectA['pos'][1] < $rectB['pos'][1] + $rectB['dim'][1]) {
         $ret = 'True';
     }
 
