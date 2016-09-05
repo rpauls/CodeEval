@@ -1,6 +1,6 @@
 <?php
 /*
- *  2016-08-30
+ *  2016-09-05
  *  CodeEval Challenge - Hard
  *  Find Min
  *  https://www.codeeval.com/browse/85/
