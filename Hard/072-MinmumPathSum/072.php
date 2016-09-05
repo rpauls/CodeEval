@@ -33,36 +33,36 @@ for ($i=0 ; $i < $nb ;) {
     }
 
     $cells = explode(',', $rows);
-    $neighbours = mkNeighbours($n,$cells);
+    $nb = mkNeighbours($n,$cells);
 
-    echo scGrid($cells, $n * $n - 1, $neighbours) . PHP_EOL;
+    echo scGrid($cells, $n * $n - 1, $nb) . PHP_EOL;
 
     $i += ($n+1);
 }
 
 
-function mkNeighbours($n, $grid)
+function mkNeighbours($n, $g)
 {
-    $grid_max = $n * $n;
-    $i = $grid_max;
+    $g_max = $n * $n;
+    $i = $g_max;
     while ($i--) {
 
         // right
         if ($i%$n < $n-1) {
-            $neighbours[$i]['r'] = $i + 1;
+            $nb[$i]['r'] = $i + 1;
         }
         // bottom
-        if ($i < $grid_max-$n) {
-            $neighbours[$i]['b'] = $i + $n;
+        if ($i < $g_max-$n) {
+            $nb[$i]['b'] = $i + $n;
         }
     }
-    return $neighbours;
+    return $nb;
 }
 
-function scGrid ($grid, $target, $neighbours, $idx=0, $sum=0, $min = INF)
+function scGrid ($g, $target, $nb, $idx=0, $sum=0, $min = INF)
 {
 
-    $sum += $grid[$idx];
+    $sum += $g[$idx];
 
     if ($sum >= $min) {
         return $min;
@@ -71,12 +71,12 @@ function scGrid ($grid, $target, $neighbours, $idx=0, $sum=0, $min = INF)
     if ($idx == $target) {
         return $sum;
     } else {
-        if (isset($neighbours[$idx]['r'])) {
-            $m = scGrid($grid, $target, $neighbours, $neighbours[$idx]['r'], $sum, $min);
+        if (isset($nb[$idx]['r'])) {
+            $m = scGrid($g, $target, $nb, $nb[$idx]['r'], $sum, $min);
             if( $m < $min ) $min = $m;
         }
-        if (isset($neighbours[$idx]['b'])) {
-            $m = scGrid($grid, $target, $neighbours, $neighbours[$idx]['b'], $sum, $min);
+        if (isset($nb[$idx]['b'])) {
+            $m = scGrid($g, $target, $nb, $nb[$idx]['b'], $sum, $min);
             if ($m < $min ) {
                 $min = $m;
             }
